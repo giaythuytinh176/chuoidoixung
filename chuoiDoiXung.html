@@ -6,21 +6,37 @@
 </head>
 <body>
 <script>
-    function doixung(character)
-    {
-        let i = character.length;
-        let len = character.length;
-        let re = true;
-        for (i = 0; i < len/2; i++)
-        {
-            if (length[i] != length[len-i-1])
-            {
-                re = false;
+
+    let char = prompt("xin moi ban nhap chuoi");
+    doixung(char);
+
+    function doixung(character) {
+        let kiemTra = 1;
+        for (let i = 0; i <= character.length / 2; i++) {
+            if (character[i] != character[character.length - i - 1]) {
+                kiemTra = 0;
                 break;
             }
         }
-        return re;
+        if (kiemTra) alert("Chuoi doi xung.");
+        if (!kiemTra) alert("Chuoi khong doi xung.");
     }
+
+    // function doixung(character)
+    // {
+    //     let i = character.length;
+    //     let len = character.length;
+    //     let re = true;
+    //     for (i = 0; i < len/2; i++)
+    //     {
+    //         if (length[i] != length[len-i-1])
+    //         {
+    //             re = false;
+    //             break;
+    //         }
+    //     }
+    //     return re;
+    // }
     // function doixung(character) {
     //     // for (let i = 0; i < character.length / 2; i++) {
     //     //     if (s1[i] != character[character.length - 1 - i]) {
@@ -34,9 +50,9 @@
     //     }
     //     return co;
     // }
-
-    let char = prompt("xin moi ban nhap chuoi");
-    console.log(doixung(char));
+    //
+    // let char = prompt("xin moi ban nhap chuoi");
+    // console.log(doixung(char));
     // if (doixung(char) == 0) {
     //     document.write("chuoi vua nhap khong phai chuoi doi xung\n");
     // }

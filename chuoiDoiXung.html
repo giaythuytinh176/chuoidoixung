@@ -6,23 +6,43 @@
 </head>
 <body>
 <script>
-
-    function doixung(character) {
-        for (let i = 0; i < character.length / 2; i++) {
-            if (s1[i] != character[character.length - 1 - i]) {
-                return 0;
+    function doixung(character)
+    {
+        let i = character.length;
+        let len = character.length;
+        let re = true;
+        for (i = 0; i < len/2; i++)
+        {
+            if (length[i] != length[len-i-1])
+            {
+                re = false;
+                break;
             }
         }
-        return 1;
+        return re;
     }
+    // function doixung(character) {
+    //     // for (let i = 0; i < character.length / 2; i++) {
+    //     //     if (s1[i] != character[character.length - 1 - i]) {
+    //     //         return 0;
+    //     //     }
+    //     // }
+    //     // return 1;
+    //     let co = 1;
+    //     for (let i = 0; i < character.length / 2; i++) {
+    //         if (character[i] != character[character.length - 1 - i]) co = 0;
+    //     }
+    //     return co;
+    // }
 
-    let char = +prompt("xin moi ban nhap chuoi\n");
-    if (doixung(char) == 0) {
-        document.write("chuoi vua nhap khong phai chuoi doi xung\n");
-    }
-    if (doixung(char) == 1) {
-        document.write("chuoi vua nhap la chuoi doi xung\n");
-    }
+    let char = prompt("xin moi ban nhap chuoi");
+    console.log(doixung(char));
+    // if (doixung(char) == 0) {
+    //     document.write("chuoi vua nhap khong phai chuoi doi xung\n");
+    // }
+    // if (doixung(char) == 1) {
+    //     document.write("chuoi vua nhap la chuoi doi xung\n");
+    // }
 
 </script>
 
